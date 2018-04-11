@@ -1,0 +1,63 @@
+package com.portcpp.tiuring;
+
+public class Main {
+
+    public static void main(String[] args) {
+        //System.out.println(s); // arba System.out.print(s) be naujos eilutes
+
+     int [] A = {0,1,2,3,2};
+     int [] B = {0,0};
+     int [] C = {22, 0 ,-5, 0, 126};
+     int [] D = {1, 0};
+     //A = new int [10];
+
+        PrintArray(NonZeros(A));
+        PrintArray(NonZeros(B));
+        PrintArray(NonZeros(C));
+        PrintArray(NonZeros(D));
+
+       // System.out.println("The sum is: " + ans);
+    }
+
+    public static int[] NonZeros( int [] A ){
+        int nonz=0;
+
+        System.out.print("passing [");
+
+     for(int i=0; i<A.length; i++){
+
+         if(i==0){System.out.print( A[i]);}
+         else System.out.print("," + A[i]);
+
+         if (A[i] != 0) nonz++;
+    }
+
+        System.out.print("]  ");
+
+        int[] B = new int[nonz];
+        int j=0;
+        for (int k=0; k<A.length; k++) {
+            if (A[k] != 0) {
+                B[j] = A[k];
+                j++;
+            }
+        }
+        return B;
+    }
+
+    public static void PrintArray( int[] B ) {
+        System.out.print("got back [");
+
+        for(int i=0; i<B.length; i++){
+
+            if(i==0){System.out.print( B[i]);}
+            else System.out.print("," + B[i]);
+
+
+        }
+
+        System.out.println("]");
+    }
+
+
+}
